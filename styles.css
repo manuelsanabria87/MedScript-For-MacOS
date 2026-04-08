@@ -1,0 +1,169 @@
+:root {
+  --bg: #f3f6fb;
+  --surface: rgba(255, 255, 255, 0.88);
+  --stroke: #d8e1ef;
+  --text: #1a2b42;
+  --muted: #556780;
+  --brand: #2a5d99;
+  --brand-strong: #1d4675;
+  --shadow: 0 18px 45px rgba(20, 48, 84, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 4% 8%, rgba(66, 122, 196, 0.16), transparent 34%),
+    radial-gradient(circle at 96% 2%, rgba(104, 167, 224, 0.2), transparent 28%),
+    linear-gradient(165deg, #eef3fa 0%, #f8fbff 40%, #ecf2fb 100%);
+  min-height: 100vh;
+}
+
+.site {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 1.2rem 0 2rem;
+}
+
+.top-nav {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.7rem;
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  background: var(--surface);
+  backdrop-filter: blur(7px);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0.8rem;
+  z-index: 5;
+}
+
+.nav-link {
+  text-decoration: none;
+  border: 1px solid var(--stroke);
+  border-radius: 11px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  color: var(--text);
+  background: #fff;
+}
+
+.nav-link.active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(90deg, var(--brand), var(--brand-strong));
+}
+
+.hero,
+.card {
+  margin-top: 1rem;
+  border: 1px solid var(--stroke);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: clamp(1.1rem, 3vw, 2rem);
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hero-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.app-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  border: 1px solid #d0dae9;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+
+p,
+li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.section-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  padding: 1.2rem;
+}
+
+.card ul,
+.card ol {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.footer-note {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.email-link {
+  color: var(--brand-strong);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: #e7effb;
+  color: #2f4f79;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-icon {
+    width: 76px;
+    height: 76px;
+  }
+}
